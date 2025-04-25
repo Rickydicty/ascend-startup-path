@@ -4,7 +4,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Mail, User, Lock, Eye, EyeOff, Google } from "lucide-react";
+import { Mail, User, Lock, Eye, EyeOff, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const SignUp = () => {
@@ -99,13 +99,13 @@ const SignUp = () => {
             className="w-full"
             onClick={() => {
               toast({
-                title: "Google Sign Up",
-                description: "This is a prototype. Backend will be implemented later.",
+                title: "External Sign Up",
+                description: "External sign up method not implemented yet.",
               });
             }}
           >
-            <Google className="mr-2 h-4 w-4" />
-            Sign up with Google
+            <ExternalLink className="mr-2 h-4 w-4" />
+            Sign up with External Provider
           </Button>
         </form>
 
