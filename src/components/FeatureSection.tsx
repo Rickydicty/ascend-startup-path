@@ -1,5 +1,6 @@
 
 import { CircleCheck, BadgeDollarSign, Users, Rocket } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const FeatureSection = () => {
   const features = [
@@ -7,21 +8,25 @@ const FeatureSection = () => {
       icon: <Rocket className="h-6 w-6 text-startup-purple" />,
       title: "Idea Analysis",
       description: "Get detailed analysis of your startup idea with AI-powered insights on viability and market potential.",
+      link: "#analyzer",
     },
     {
       icon: <BadgeDollarSign className="h-6 w-6 text-startup-purple" />,
       title: "Investment Estimation",
       description: "Calculate how much capital you'll need to bring your idea to life with accurate financial projections.",
+      link: "#investment-cards",
     },
     {
       icon: <Users className="h-6 w-6 text-startup-purple" />,
       title: "Team Building",
       description: "Discover the ideal team structure and key roles needed to execute your vision successfully.",
+      link: "#analyzer",
     },
     {
       icon: <CircleCheck className="h-6 w-6 text-startup-purple" />,
       title: "Roadmap Creation",
       description: "Get a detailed timeline and milestone plan for turning your idea into a successful business.",
+      link: "#pricing",
     },
   ];
 
@@ -37,16 +42,17 @@ const FeatureSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <div 
+            <a 
               key={index} 
-              className="glass p-6 rounded-xl card-hover"
+              href={feature.link}
+              className="glass p-6 rounded-xl card-hover transition-all duration-300 hover:scale-105"
             >
               <div className="bg-startup-purple/10 rounded-full p-3 inline-flex mb-4">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
               <p className="text-gray-600">{feature.description}</p>
-            </div>
+            </a>
           ))}
         </div>
       </div>

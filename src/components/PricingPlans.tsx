@@ -1,8 +1,17 @@
-
 import { Check, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 
 const PricingPlans = () => {
+  const { toast } = useToast();
+
+  const handlePlanSelect = (plan: string) => {
+    toast({
+      title: "Plan Selected",
+      description: `You selected the ${plan} plan. This feature will be available soon!`,
+    });
+  };
+
   const plans = [
     {
       name: "Free",
@@ -55,7 +64,7 @@ const PricingPlans = () => {
   ];
 
   return (
-    <section className="py-16 px-4">
+    <section id="pricing" className="py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-3">Choose Your Plan</h2>
@@ -103,6 +112,7 @@ const PricingPlans = () => {
               </ul>
               
               <Button 
+                onClick={() => handlePlanSelect(plan.name)}
                 className={`w-full ${
                   plan.highlight 
                     ? 'bg-startup-purple hover:bg-startup-purple/90' 

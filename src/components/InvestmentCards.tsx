@@ -1,4 +1,3 @@
-
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -25,7 +24,7 @@ const InvestmentCards = () => {
   ];
 
   return (
-    <section className="my-12 px-4 max-w-6xl mx-auto">
+    <section id="investment-cards" className="my-12 px-4 max-w-6xl mx-auto">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold mb-2">Investment Opportunities</h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
@@ -37,13 +36,13 @@ const InvestmentCards = () => {
         {projects.map((project, index) => (
           <div 
             key={index}
-            className="bg-white rounded-xl shadow-md overflow-hidden card-hover"
+            className="bg-white rounded-xl shadow-md overflow-hidden card-hover transition-transform duration-300 hover:scale-105"
           >
             <div className="h-48 overflow-hidden">
               <img 
                 src={project.image} 
                 alt={project.title} 
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-center hover:scale-110 transition-transform duration-500"
               />
             </div>
             <div className="p-6">
@@ -52,7 +51,7 @@ const InvestmentCards = () => {
                 {project.description}
               </p>
               <Button 
-                className="w-full bg-startup-purple hover:bg-startup-purple/90"
+                className="w-full bg-startup-purple hover:bg-startup-purple/90 transition-colors"
                 onClick={() => window.open(project.link, '_blank')}
               >
                 <span className="flex items-center gap-2">
